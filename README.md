@@ -61,5 +61,5 @@ sudo chown <usuario> blogapi
 ```
 
 ```shell
-chgrp <usuario> blogapi
+sudo chgrp <usuario> blogapi
 ```
