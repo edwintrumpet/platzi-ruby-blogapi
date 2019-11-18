@@ -135,3 +135,9 @@ rails g factory_bot:model post title:string content:string published:boolean use
 ```
 
 Esto nos genera los archivos en el directorio `test/factories` que podemos arreglar con _Faker_
+
+## Generador de serializador con serializer
+
+```shell
+rails g serializer post
+```

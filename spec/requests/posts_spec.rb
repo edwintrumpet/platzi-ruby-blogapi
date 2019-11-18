@@ -27,6 +27,12 @@ RSpec.describe "Posts endpoint", type: :request do
             payload = JSON.parse(response.body)
             expect(payload).not_to be_empty
             expect(payload["id"]).to eq(post.id)
+            expect(payload["title"]).to eq(post.title)
+            expect(payload["content"]).to eq(post.content)
+            expect(payload["published"]).to eq(post.published)
+            expect(payload["author"]["name"]).to eq(post.user.name)
+            expect(payload["author"]["email"]).to eq(post.user.email)
+            expect(payload["author"]["id"]).to eq(post.user.id)
             expect(response).to have_http_status(200)
         end
     end
@@ -45,7 +51,7 @@ RSpec.describe "Posts endpoint", type: :request do
             post "/posts", params: req_payload
             payload = JSON.parse(response.body)
             expect(payload).not_to be_empty
-            expect(payload["id"]).not_to be_empty
+            expect(payload["id"]).not_to be_nil
             expect(response).to have_http_status(:created)
         end
 
@@ -93,7 +99,7 @@ RSpec.describe "Posts endpoint", type: :request do
             put "/posts/#{article.id}", params: req_payload
             payload = JSON.parse(response.body)
             expect(payload).not_to be_empty
-            expect(payload["error"]).to eq(article.id)
+            expect(payload["error"]).not_to be_empty
             expect(response).to have_http_status(:unprocessable_entity)
         end
     end
