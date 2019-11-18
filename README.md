@@ -85,3 +85,31 @@ Luego generamos los archivos de configuración de _RSpec_
 ```shell
 rails generate rspec:install
 ```
+
+## Instrucciones de desarrollo
+
+### Creación de modelos
+
+Modelo de usuario
+
+```shell
+rails g model user email:string name:string auth_token:string
+```
+
+Modelo de post
+
+```shell
+rails g model post title:string content:string published:boolean user:references
+```
+
+Para destruir modelos usamos el comando
+
+```shell
+rails destroy model <model>
+```
+
+Luego corremos las migraciones
+
+```shell
+rails db:migrate
+```
