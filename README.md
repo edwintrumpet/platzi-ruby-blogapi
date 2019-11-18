@@ -1,24 +1,65 @@
-# README
+# BlogApi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proyecto del Curso de creación de APIs con Ruby on Rails de Platzi
 
-Things you may want to cover:
+## Instalación
 
-* Ruby version
+```shell
+sudo bundle install
+```
 
-* System dependencies
+## Scripts
 
-* Configuration
+- `rails server`  
+Lanza la aplicación
 
-* Database creation
+## Versión
 
-* Database initialization
+Ruby 2.5.1  
+Rails 5.2.3
 
-* How to run the test suite
+## Instrucciones de configuración inicial
 
-* Services (job queues, cache servers, search engines, etc.)
+Se instaló _Ruby_
 
-* Deployment instructions
+```shell
+sudo apt-get install ruby-full
+```
 
-* ...
+Se instaló el _bundler_
+
+```shell
+sudo gem install bundler
+```
+
+Se instaló _Rails 5.2.3_
+
+```shell
+sudo gem install rails -v 5.2.1
+```
+
+La creación del proyecto presentó problemas por no encontrar _sqlite3_, se solucionó instalando
+
+```shell
+sudo apt-get install sqlite3 libsqlite3-dev
+```
+
+```shell
+sudo gem install sqlite3-ruby
+```
+
+Se crea el proyecto con unas banderas que indican que en lugar de un proyecto completo se precindirá de las vistas y solo se creará la API, también se precindirá de los tests porque crearemos unos propios
+
+```shell
+sudo rails new blogapi --api -T
+```
+
+El proyecto se creó con grupo y propietario _root_, para cambiarlos al usuario y poder hacer modificaciones sin usar _sudo_
+
+```shell
+sudo chown <usuario> blogapi
+```
+
+```shell
+chgrp <usuario> blogapi
+```
