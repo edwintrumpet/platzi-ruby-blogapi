@@ -16,6 +16,10 @@ Lanza la aplicación
 Lanza los tests
 - `RAILS_ENV=test rails c`  
 Ejecuta la consola en el ambiente de pruebas
+- `rails routes`  
+Verificación de rutas
+- `rails routes | grep "posts"`  
+Verificación de rutas de posts
 
 ## Versión
 
