@@ -12,6 +12,8 @@ sudo bundle install
 
 - `rails server`  
 Lanza la aplicación
+- `bundle exec rspec`  
+Lanza los tests
 
 ## Versión
 
