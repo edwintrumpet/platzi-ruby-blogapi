@@ -63,3 +63,23 @@ sudo chown <usuario> blogapi
 ```shell
 sudo chgrp <usuario> blogapi
 ```
+
+## Instalación de gemas necesarias
+
+- **RSpec:** Para los tests
+- **shoulda-matchers:** Validaciones para RSpec
+- **factory-bot:** Creación de modelos falsos para los tests
+- **database-cleaner:** Limpiar la base de datos después de cada ejecución de un test
+- **faker:** Permite generar información falsa muy útil para los tests
+
+Después de agregar las gemas en el archivo `Gemfile` las instalamos con el comando
+
+```shell
+sudo bundle install
+```
+
+Luego generamos los archivos de configuración de _RSpec_
+
+```shell
+rails generate rspec:install
+```
