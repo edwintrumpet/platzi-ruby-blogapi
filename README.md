@@ -14,6 +14,8 @@ sudo bundle install
 Lanza la aplicación
 - `bundle exec rspec`  
 Lanza los tests
+- `RAILS_ENV=test rails c`  
+Ejecuta la consola en el ambiente de pruebas
 
 ## Versión
 
@@ -113,3 +115,19 @@ Luego corremos las migraciones
 ```shell
 rails db:migrate
 ```
+
+## Generación de factories con factory-bot
+
+Factory de usuario
+
+```shell
+rails g factory_bot:model user email:string name:string auth_token:string
+```
+
+Factory de post
+
+```shell
+rails g factory_bot:model post title:string content:string published:boolean user:references
+```
+
+Esto nos genera los archivos en el directorio `test/factories` que podemos arreglar con _Faker_
